@@ -1,12 +1,16 @@
-var express = require('express');
+module.exports = () => {
+    var express = require('express');
 
-var app = express();
-var server = require('http').Server(app);
+    var app = express();
+    var server = require('http').Server(app);
 
-app.use(express.static('./build'));
+    app.use(express.static('./build'));
 
-app.use('/*', (req, res) => {
-  res.sendfile('./build/index.html');
-});
+    app.use('*', (req, res) => {
+        res.sendFile('./build/index.html');
+    });
 
-server.listen(8001, () => console.log('Listening on port %d', server.address().port));
+    require('./connectdb.js')();
+
+    server.listen(8001, () => console.log('Listening on port %d', server.address().port));
+};

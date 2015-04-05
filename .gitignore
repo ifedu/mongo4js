@@ -5,3 +5,4 @@ vendor/
 build/
 build-helpers/gulp/
 .sass-cache/
+tmp/
