@@ -1,13 +1,9 @@
 include mixins/mixins
 doctype html
-html(
-    lang='es'
-    ng-app='guideStyleCleanly'
-    ng-controller='ParentCtrl as parentCtrl'
-)
+html(lang='es')
     head
         meta(charset='utf-8')
-        title Guide Style Cleanly
+        title Mongo4js
         meta(
             content=''
             name='description'
@@ -22,17 +18,8 @@ html(
         )
     body
         .row
-            .col-md-2
-            .col-md-2
-            .col-md-2
-            .col-md-2
-            .col-md-2
-            .col-md-2
-        div(ui-view)
+            .col-md-12
+                code db
 
-        // build:js js/all.js
-        // bower:js
-        // endbower
+        script(src='js/model.js')
         script(src='js/index.js')
-        script(src='js/controllers/parent.controller.js')
-        // endbuild
